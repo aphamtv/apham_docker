@@ -6,10 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My first dynamic Website</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
 </head>
 
 <body>
+
+    <header>
+        <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="{{ url_for('titanic') }}">Titanic</a></li>
+              <li><a href="https://github.com/aphamtv">About me</a></li>
+            </ul>
+          </nav>
+    </header>
     <main>
+        <a href="https://www.hwr-berlin.de/">Visit HWR Berlin</a>
+        <figure>
+            <img alt="This is an image" src="{{ url_for('static', filename='images/docker_image.jpg') }}" />
+            <figcaption>This is an image</figcaption>
+        </figure>
+
         <h1>I have been seen {{ count }} times.</h1>
         <ul>
             {% for i in range(1, count+1) %}
@@ -17,6 +34,11 @@
             {% endfor %}
         </ul>
     </main>
+
+    <footer>
+        <p>&copy; 2023 Anh Pham. All rights reserved.</p>
+    </footer>
+      
 </body>
 
 </html>

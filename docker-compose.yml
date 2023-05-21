@@ -12,3 +12,6 @@ services:
       - ./app:/app
     depends_on:
       - redis
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST}

@@ -2,6 +2,12 @@ import time
 import redis
 import pandas as pd
 from flask import Flask, render_template, url_for
+from dotenv import load_dotenv
+import os
+
+load_dotenv() 
+cache = redis.Redis(host=os.getenv('REDIS_HOST'), port=6379,  password=os.getenv('REDIS_PASSWORD'))
+
 
 app = Flask(__name__)
 app.config['IMAGE_FOLDER'] = 'static/images'
